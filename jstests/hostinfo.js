@@ -15,15 +15,7 @@ if (hostinfo.os.type == "Windows") {
 } else if (hostinfo.os.type == "Darwin") {
     assert.neq( hostinfo.os.name, "" || null, "Missing Darwin os name" );
     assert.neq( hostinfo.os.version, "" || null, "Missing Darwin version" );
-}
-
-// comment out this block for systems which have not implemented hostinfo.  
-if (hostinfo.os.type != "") {
-    assert.neq( hostinfo.system.hostname, "" || null, "Missing Hostname" );
-    assert.neq( hostinfo.system.currentTime, "" || null, "Missing Current Time" );
-    assert.neq( hostinfo.system.cpuAddrSize, "" || null || 0, "Missing CPU Address Size" );
-    assert.neq( hostinfo.system.memSizeMB, "" || null, "Missing Memory Size" );
-    assert.neq( hostinfo.system.numCores, "" || null || 0, "Missing Number of Cores" );
-    assert.neq( hostinfo.system.cpuArch, "" || null, "Missing CPU Architecture" );
-    assert.neq( hostinfo.system.numaEnabled, "" || null, "Missing NUMA flag" );
+} else if (hostinfo.os.type == "BSD") {
+    assert.neq( hostinfo.os.name, "" || null, "Missing BSD os name" );
+    assert.neq( hostinfo.os.version, "" || null, "Missing BSD version" );
 }
