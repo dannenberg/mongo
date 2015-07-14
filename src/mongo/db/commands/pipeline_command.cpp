@@ -169,7 +169,7 @@ public:
     virtual bool slaveOverrideOk() const {
         return true;
     }
-    bool supportsReadMajority() const final {
+    bool supportsReadConcern() const final {
         return true;
     }
     virtual void help(stringstream& help) const {
